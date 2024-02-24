@@ -19,7 +19,7 @@ createButton.addEventListener('click', function () {
 })
 
 function createBoxes(amount) {
-	for (let i = 0; i < amount; i++) {
+	for (let i = 0; i < amount; i += 1) {
 		const size = 30 + i * 10
 		const box = createBox(size)
 		boxesContainer.appendChild(box)

@@ -13,16 +13,15 @@ const images = [
 	},
 ]
 
-const galleryList = document.querySelector('.gallery')
+const photoList = document.querySelector('.gallery')
 
 images.forEach(image => {
-	const galleryItem = document.createElement('li')
-	galleryItem.classList.add('gallery-item')
-
+	const photoItem = document.createElement('li')
+	photoItem.classList.add('gallery-item')
 	const img = document.createElement('img')
 	img.src = image.url
 	img.alt = image.alt
 
-	galleryItem.append(img)
-	galleryList.append(galleryItem)
+	photoItem.append(img)
+	photoList.append(photoItem)
 })
