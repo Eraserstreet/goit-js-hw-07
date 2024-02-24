@@ -1,14 +1,14 @@
 const nameInput = document.getElementById('name-input')
 const nameOutput = document.getElementById('name-output')
 
-nameInput.addEventListener('input', newName)
+nameInput.addEventListener('input', changeName)
 
-function newName() {
-	const enteredName = nameInput.value.trim()
+function changeName() {
+	const newName = nameInput.value.trim()
 
-	if (enteredName === '') {
+	if (newName === '') {
 		nameOutput.textContent = 'Anonymous'
 	} else {
-		nameOutput.textContent = enteredName
+		nameOutput.textContent = newName
 	}
 }
