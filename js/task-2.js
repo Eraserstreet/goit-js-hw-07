@@ -14,7 +14,7 @@ const images = [
 ]
 
 const photoList = document.querySelector('.gallery')
-images.forEach(image => {
+const itemArr = images.map(image => {
 	const photoItem = document.createElement('li')
 	photoItem.classList.add('gallery-item')
 	const img = document.createElement('img')
@@ -22,5 +22,7 @@ images.forEach(image => {
 	img.alt = image.alt
 
 	photoItem.append(img)
-	photoList.insertAdjacentElement('beforeend', photoItem)
+
+	return photoItem
 })
+photoList.append(...itemArr)
