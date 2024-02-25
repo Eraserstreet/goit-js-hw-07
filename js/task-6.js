@@ -1,7 +1,7 @@
 function getRandomHexColor() {
 	return `#${Math.floor(Math.random() * 16777215)
 		.toString(16)
-		.padStart(6, 0)}`
+		.padStart(6, '0')}`
 }
 
 const createButton = document.querySelector('[data-create]')
@@ -13,6 +13,7 @@ createButton.addEventListener('click', function () {
 	const amount = parseInt(input.value)
 
 	if (amount >= 1 && amount <= 100) {
+		removeBoxes()
 		createBoxes(amount)
 		input.value = ''
 	}
@@ -38,4 +39,10 @@ destroyButton.addEventListener('click', destroyBoxes)
 
 function destroyBoxes() {
 	boxesContainer.innerHTML = ''
+}
+
+function removeBoxes() {
+	while (boxesContainer.firstChild) {
+		boxesContainer.removeChild(boxesContainer.firstChild)
+	}
 }
